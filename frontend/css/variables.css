@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════════
+   VARIABLES — Design Tokens
+   All visual design decisions live here.
+   Changing a value here updates the entire UI.
+═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Background System ─────────────────────────────────
+     Layered dark palette for depth and hierarchy
+  ──────────────────────────────────────────────────────── */
+  --bg-base:       #09090e;  /* Body background — deepest level  */
+  --bg-surface:    #111118;  /* Sidebar, header                  */
+  --bg-card:       #16161f;  /* Cards, elevated containers        */
+  --bg-elevated:   #1c1c28;  /* Dropdowns, tooltips              */
+  --bg-hover:      #22222f;  /* Interactive hover state          */
+  --bg-input:      #13131c;  /* Form inputs background           */
+  --bg-skeleton:   #1a1a26;  /* Skeleton loading base            */
+
+  /* ─── Accent — Primary brand color ─────────────────────
+     Netflix red, used sparingly for maximum impact
+  ──────────────────────────────────────────────────────── */
+  --accent:        #e50914;
+  --accent-hover:  #ff1a22;
+  --accent-dim:    rgba(229, 9, 20, 0.12);
+  --accent-glow:   rgba(229, 9, 20, 0.30);
+
+  /* ─── Text ──────────────────────────────────────────────*/
+  --text-primary:   #f0f0f7;  /* Headlines, key content           */
+  --text-secondary: #8888a8;  /* Supporting text, labels          */
+  --text-muted:     #44445a;  /* Placeholder, disabled, dividers  */
+
+  /* ─── Border ────────────────────────────────────────────*/
+  --border:        #1e1e2c;
+  --border-light:  #28283a;
+
+  /* ─── Status Colors ─────────────────────────────────────
+     Each watch status has a color + translucent background
+  ──────────────────────────────────────────────────────── */
+  --status-watching:     #3b82f6;
+  --status-watching-bg:  rgba(59, 130, 246, 0.14);
+  --status-completed:    #22c55e;
+  --status-completed-bg: rgba(34, 197, 94, 0.14);
+  --status-plan:         #f59e0b;
+  --status-plan-bg:      rgba(245, 158, 11, 0.14);
+  --status-dropped:      #ef4444;
+  --status-dropped-bg:   rgba(239, 68, 68, 0.14);
+
+  /* ─── Semantic Feedback ─────────────────────────────────*/
+  --success:     #22c55e;
+  --success-bg:  rgba(34, 197, 94, 0.12);
+  --error:       #ef4444;
+  --error-bg:    rgba(239, 68, 68, 0.12);
+  --warning:     #f59e0b;
+  --warning-bg:  rgba(245, 158, 11, 0.12);
+  --info:        #6366f1;
+  --info-bg:     rgba(99, 102, 241, 0.12);
+
+  /* ─── Typography ────────────────────────────────────────*/
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --text-xs:   0.6875rem; /* 11px */
+  --text-sm:   0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-lg:   1.0625rem; /* 17px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.5rem;    /* 40px */
+
+  --fw-normal:    400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+
+  /* ─── Spacing ───────────────────────────────────────────
+     Based on 4px grid
+  ──────────────────────────────────────────────────────── */
+  --sp-1:  0.25rem;  /*  4px */
+  --sp-2:  0.5rem;   /*  8px */
+  --sp-3:  0.75rem;  /* 12px */
+  --sp-4:  1rem;     /* 16px */
+  --sp-5:  1.25rem;  /* 20px */
+  --sp-6:  1.5rem;   /* 24px */
+  --sp-8:  2rem;     /* 32px */
+  --sp-10: 2.5rem;   /* 40px */
+  --sp-12: 3rem;     /* 48px */
+  --sp-16: 4rem;     /* 64px */
+
+  /* ─── Border Radius ─────────────────────────────────────*/
+  --r-sm:   5px;
+  --r-md:   9px;
+  --r-lg:   13px;
+  --r-xl:   18px;
+  --r-2xl:  26px;
+  --r-full: 9999px;
+
+  /* ─── Shadows ───────────────────────────────────────────*/
+  --shadow-sm:    0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md:    0 4px 20px rgba(0, 0, 0, 0.55);
+  --shadow-lg:    0 8px 40px rgba(0, 0, 0, 0.65);
+  --shadow-card:  0 2px 16px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 24px 80px rgba(0, 0, 0, 0.85);
+  --shadow-accent:0 4px 28px rgba(229, 9, 20, 0.45);
+
+  /* ─── Layout Dimensions ─────────────────────────────────*/
+  --sidebar-w: 252px;
+  --header-h:  66px;
+
+  /* ─── Transitions ───────────────────────────────────────*/
+  --t-fast:  130ms ease;
+  --t-base:  230ms ease;
+  --t-slow:  380ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ─── Z-index Stack ─────────────────────────────────────*/
+  --z-sidebar: 100;
+  --z-header:  200;
+  --z-modal:   300;
+  --z-toast:   400;
+}

@@ -1,0 +1,258 @@
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet and mobile breakpoints
+   Desktop-first: base styles target desktops, then we
+   progressively simplify for smaller viewports.
+═══════════════════════════════════════════════════════════ */
+
+/* ─── Large Desktop (≥ 1600px) ─────────────────────────── */
+@media (min-width: 1600px) {
+  .stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+}
+
+/* ─── Medium Desktop (< 1280px) ────────────────────────── */
+@media (max-width: 1280px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .search-bar__input {
+    width: 220px;
+  }
+
+  .search-bar__input:focus {
+    width: 260px;
+  }
+}
+
+/* ─── Laptop (< 1024px) ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-w: 220px;
+  }
+
+  .main-content {
+    padding: var(--sp-6);
+  }
+
+  .header {
+    padding: 0 var(--sp-6);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: var(--sp-4);
+  }
+
+  /* Collapse sidebar by default on laptops */
+  .modal--details {
+    flex-direction: column;
+    width: min(500px, 100%);
+  }
+
+  .modal__poster-wrapper {
+    width: 100%;
+    height: 260px;
+    border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+    min-height: unset;
+  }
+
+  .modal__poster-placeholder {
+    min-height: 260px;
+  }
+}
+
+/* ─── Tablet (< 768px) ──────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-w: 240px;
+    --header-h: 58px;
+  }
+
+  /* On mobile, sidebar slides in from left as overlay */
+  .sidebar {
+    transform: translateX(calc(-1 * var(--sidebar-w)));
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* Main wrapper takes full width on mobile */
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  /* Show a dark overlay behind the sidebar when open */
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 10, 0.6);
+    z-index: calc(var(--z-sidebar) - 1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    animation: overlay-in var(--t-base) ease forwards;
+  }
+
+  .header {
+    padding: 0 var(--sp-4);
+    gap: var(--sp-3);
+  }
+
+  .header__page-title {
+    font-size: var(--text-base);
+  }
+
+  .search-bar__input {
+    width: 160px;
+    font-size: var(--text-xs);
+  }
+
+  .search-bar__input:focus {
+    width: 200px;
+  }
+
+  .main-content {
+    padding: var(--sp-4);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .stat-card {
+    padding: var(--sp-4);
+    gap: var(--sp-3);
+  }
+
+  .stat-card__value {
+    font-size: var(--text-xl);
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-bar__left,
+  .filter-bar__right {
+    width: 100%;
+  }
+
+  .filter-bar__left {
+    flex-wrap: wrap;
+  }
+
+  .filter-bar__right {
+    justify-content: space-between;
+  }
+
+  .filter-bar .select,
+  .filter-bar .input {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--sp-3);
+  }
+
+  .section {
+    margin-bottom: var(--sp-6);
+  }
+
+  .toast-container {
+    left: var(--sp-4);
+    right: var(--sp-4);
+    bottom: var(--sp-4);
+    max-width: none;
+  }
+}
+
+/* ─── Mobile (< 480px) ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+
+  .stat-card {
+    gap: var(--sp-2);
+    padding: var(--sp-3);
+  }
+
+  .stat-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stat-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stat-card__value {
+    font-size: var(--text-xl);
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .modal--form {
+    padding: var(--sp-5);
+  }
+
+  .modal--form .form-row {
+    flex-direction: column;
+  }
+
+  .modal--confirm {
+    padding: var(--sp-6) var(--sp-5);
+  }
+
+  .pagination__inner {
+    gap: var(--sp-1);
+  }
+
+  .pagination__btn,
+  .pagination__page {
+    min-width: 32px;
+    height: 32px;
+    font-size: var(--text-xs);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ─── Utility: Sidebar backdrop ─────────────────────────── */
+/* Only shown on mobile when sidebar is open */
+.sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-backdrop.sidebar-backdrop--visible {
+    display: block;
+  }
+}
